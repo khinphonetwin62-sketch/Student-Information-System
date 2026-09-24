@@ -1,13 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author khinbhonethwin
- */
-
 import java.util.Date;
 public class Student {
     private String id; // PK
@@ -83,5 +73,21 @@ public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
 
 @Override
 public String toString() {
-    return "Student{id='" + id + "', studentNo='" + studentNo + "', name='" + firstName + " " + lastName + "', email='" + email + "'}";
-}}
+   return "Student Details:\n" +
+           " ID: " + id + "\n" +
+           " Student Number: " + studentNo + "\n" +
+           " National ID: " + nationalId + "\n" +
+           " First Name: " + firstName + "\n" +
+           " Last Name: " + lastName + "\n" +
+           " Birth Date: " + birthDate + "\n" +
+           " Gender: " + gender + "\n" +
+           " Email: " + email + "\n" +
+           " Phone Number: " + phone + "\n" +
+           " Address: " + address + "\n" +
+           " Program ID: " + programId + "\n" +
+           " Enrollment Year: " + enrollmentYear + "\n" +
+           " Class Year: " + classYear + "\n" +
+           " Photo URL: " + photoUrl + "\n" +
+           " Created At: " + createdAt;
+} 
+}
