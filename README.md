@@ -1,1 +1,1 @@
-Student-Information-System [language used:Java]
+Student-Information-System [Language used:Java]
