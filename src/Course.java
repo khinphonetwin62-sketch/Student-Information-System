@@ -7,39 +7,59 @@
  *
  * @author khinbhonethwin
  */
-import java.util.UUID;
 
 public class Course {
-    private String courseId;
-    private String courseCode;
-    private String courseTitle;
+    private String id; // PK
+    private String code;
+    private String name;
+    private String departmentId; // FK -> Department
     private int credits;
+    private int theoryHours;
+    private int labHours;
+    private String courseType;
+    private String language;
+    private String description;
+    private boolean isActive;
+    public Course() {}
     
-    public Course() {
-    this.courseId = UUID.randomUUID().toString();
-}
-
-public Course(String courseCode, String courseTitle, int credits) {
-    this.courseId = UUID.randomUUID().toString();
-    this.courseCode = courseCode;
-    this.courseTitle = courseTitle;
+    public Course(String id, String code, String name, String departmentId, int credits, int theoryHours, int labHours, String courseType, String language, String description, boolean isActive) {
+    this.id = id;
+    this.code = code;
+    this.name = name;
+    this.departmentId = departmentId;
     this.credits = credits;
+    this.theoryHours = theoryHours;
+    this.labHours = labHours;
+    this.courseType = courseType;
+    this.language = language;
+    this.description = description;
+    this.isActive = isActive;
 }
 
-public String getCourseId() { return courseId; }
-public void setCourseId(String courseId) { this.courseId = courseId; }
-
-public String getCourseCode() { return courseCode; }
-public void setCourseCode(String courseCode) { this.courseCode = courseCode; }
-
-public String getCourseTitle() { return courseTitle; }
-public void setCourseTitle(String courseTitle) { this.courseTitle = courseTitle; }
-
+public String getId() { return id; }
+public void setId(String id) { this.id = id; }
+public String getCode() { return code; }
+public void setCode(String code) { this.code = code; }
+public String getName() { return name; }
+public void setName(String name) { this.name = name; }
+public String getDepartmentId() { return departmentId; }
+public void setDepartmentId(String departmentId) { this.departmentId = departmentId; }
 public int getCredits() { return credits; }
 public void setCredits(int credits) { this.credits = credits; }
+public int getTheoryHours() { return theoryHours; }
+public void setTheoryHours(int theoryHours) { this.theoryHours = theoryHours; }
+public int getLabHours() { return labHours; }
+public void setLabHours(int labHours) { this.labHours = labHours; }
+public String getCourseType() { return courseType; }
+public void setCourseType(String courseType) { this.courseType = courseType; }
+public String getLanguage() { return language; }
+public void setLanguage(String language) { this.language = language; }
+public String getDescription() { return description; }
+public void setDescription(String description) { this.description = description; }
+public boolean isIsActive() { return isActive; }
+public void setIsActive(boolean isActive) { this.isActive = isActive; }
 
 @Override
 public String toString() {
-    return "Course{code='" + courseCode + "', title='" + courseTitle + "', credits=" + credits + "}";
-}
-}
+    return "Course{id='" + id + "', code='" + code + "', name='" + name + "', credits=" + credits + "}";
+}}

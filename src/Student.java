@@ -7,55 +7,81 @@
  *
  * @author khinbhonethwin
  */
-import java.util.UUID;
 
+import java.util.Date;
 public class Student {
-    private String studentId;
+    private String id; // PK
+    private String studentNo;
+    private String nationalId;
     private String firstName;
     private String lastName;
+    private Date birthDate;
+    private Gender gender; // Enum
     private String email;
-    private Gender gender;
-    private Program program;
+    private String phone;
+    private String address;
+    private String programId; // FK -> Program
+    private int enrollmentYear;
+    private int classYear;
+    private String status;
+    private String photoUrl;
+    private Date createdAt;
     
-    public Student() {
-    this.studentId = UUID.randomUUID().toString();
-}
-
-public Student(String firstName, String lastName, String email, Gender gender, Program program) {
-    this.studentId = UUID.randomUUID().toString();
+    public Student() {}
+    
+    public Student(String id, String studentNo, String nationalId, String firstName, String lastName, Date birthDate, Gender gender, String email, String phone, String address, String programId, int enrollmentYear, int classYear, String status, String photoUrl, Date createdAt) {
+    this.id = id;
+    this.studentNo = studentNo;
+    this.nationalId = nationalId;
     this.firstName = firstName;
     this.lastName = lastName;
-    this.email = email;
+    this.birthDate = birthDate;
     this.gender = gender;
-    this.program = program;
+    this.email = email;
+    this.phone = phone;
+    this.address = address;
+    this.programId = programId;
+    this.enrollmentYear = enrollmentYear;
+    this.classYear = classYear;
+    this.status = status;
+    this.photoUrl = photoUrl;
+    this.createdAt = createdAt;
 }
 
-public String getStudentId() { return studentId; }
-public void setStudentId(String studentId) { this.studentId = studentId; }
-
+public String getId() { return id; }
+public void setId(String id) { this.id = id; }
+public String getStudentNo() { return studentNo; }
+public void setStudentNo(String studentNo) { this.studentNo = studentNo; }
+public String getNationalId() { return nationalId; }
+public void setNationalId(String nationalId) { this.nationalId = nationalId; }
 public String getFirstName() { return firstName; }
 public void setFirstName(String firstName) { this.firstName = firstName; }
-
 public String getLastName() { return lastName; }
 public void setLastName(String lastName) { this.lastName = lastName; }
-
-public String getEmail() { return email; }
-public void setEmail(String email) { this.email = email; }
-
+public Date getBirthDate() { return birthDate; }
+public void setBirthDate(Date birthDate) { this.birthDate = birthDate; }
 public Gender getGender() { return gender; }
 public void setGender(Gender gender) { this.gender = gender; }
-
-public Program getProgram() { return program; }
-public void setProgram(Program program) { this.program = program; }
+public String getEmail() { return email; }
+public void setEmail(String email) { this.email = email; }
+public String getPhone() { return phone; }
+public void setPhone(String phone) { this.phone = phone; }
+public String getAddress() { return address; }
+public void setAddress(String address) { this.address = address; }
+public String getProgramId() { return programId; }
+public void setProgramId(String programId) { this.programId = programId; }
+public int getEnrollmentYear() { return enrollmentYear; }
+public void setEnrollmentYear(int enrollmentYear) { this.enrollmentYear = enrollmentYear; }
+public int getClassYear() { return classYear; }
+public void setClassYear(int classYear) { this.classYear = classYear; }
+public String getStatus() { return status; }
+public void setStatus(String status) { this.status = status; }
+public String getPhotoUrl() { return photoUrl; }
+public void setPhotoUrl(String photoUrl) { this.photoUrl = photoUrl; }
+public Date getCreatedAt() { return createdAt; }
+public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
 
 @Override
 public String toString() {
-    return "Student{" +
-            "id='" + studentId + '\'' +
-            ", name='" + firstName + " " + lastName + '\'' +
-            ", email='" + email + '\'' +
-            ", gender=" + gender +
-            ", program=" + (program != null ? program.getProgramName() : "N/A") +
-            '}';
-}
-}
+    return "Student{id='" + id + "', studentNo='" + studentNo + "', name='" + firstName + " " + lastName + "', email='" + email + "'}";
+}}

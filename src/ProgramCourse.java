@@ -7,34 +7,40 @@
  *
  * @author khinbhonethwin
  */
-import java.util.UUID;
 
 public class ProgramCourse {
-    private String id;
-    private Program program;
-    private Course course;
+    private String id; // PK
+    private String programId; // FK -> Program
+    private String courseId; // FK -> Course
+    private int semesterOrder;
+    private String courseType;
+    private boolean isActive;
     
-    public ProgramCourse() {
-    this.id = UUID.randomUUID().toString();
-}
-
-public ProgramCourse(Program program, Course course) {
-    this.id = UUID.randomUUID().toString();
-    this.program = program;
-    this.course = course;
+    public ProgramCourse() {}
+    
+    public ProgramCourse(String id, String programId, String courseId, int semesterOrder, String courseType, boolean isActive) {
+    this.id = id;
+    this.programId = programId;
+    this.courseId = courseId;
+    this.semesterOrder = semesterOrder;
+    this.courseType = courseType;
+    this.isActive = isActive;
 }
 
 public String getId() { return id; }
 public void setId(String id) { this.id = id; }
-
-public Program getProgram() { return program; }
-public void setProgram(Program program) { this.program = program; }
-
-public Course getCourse() { return course; }
-public void setCourse(Course course) { this.course = course; }
+public String getProgramId() { return programId; }
+public void setProgramId(String programId) { this.programId = programId; }
+public String getCourseId() { return courseId; }
+public void setCourseId(String courseId) { this.courseId = courseId; }
+public int getSemesterOrder() { return semesterOrder; }
+public void setSemesterOrder(int semesterOrder) { this.semesterOrder = semesterOrder; }
+public String getCourseType() { return courseType; }
+public void setCourseType(String courseType) { this.courseType = courseType; }
+public boolean isIsActive() { return isActive; }
+public void setIsActive(boolean isActive) { this.isActive = isActive; }
 
 @Override
 public String toString() {
-    return "ProgramCourse{program=" + program.getProgramName() + ", course=" + course.getCourseCode() + "}";
-}
-}
+    return "ProgramCourse{id='" + id + "', programId='" + programId + "', courseId='" + courseId + "'}";
+}}

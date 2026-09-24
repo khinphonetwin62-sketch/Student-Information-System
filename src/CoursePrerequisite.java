@@ -7,34 +7,35 @@
  *
  * @author khinbhonethwin
  */
-import java.util.UUID;
 
 public class CoursePrerequisite {
-    private String id;
-    private Course course;
-    private Course prerequisiteCourse;
-    
-    public CoursePrerequisite() {
-    this.id = UUID.randomUUID().toString();
-}
+    private String id; // PK
+    private String courseId; // FK -> Course
+    private String prerequisiteCourseId; // FK -> Course
+    private String type;
+    private String minGrade;
+    public CoursePrerequisite() {}
 
-public CoursePrerequisite(Course course, Course prerequisiteCourse) {
-    this.id = UUID.randomUUID().toString();
-    this.course = course;
-    this.prerequisiteCourse = prerequisiteCourse;
+    public CoursePrerequisite(String id, String courseId, String prerequisiteCourseId, String type, String minGrade) {
+    this.id = id;
+    this.courseId = courseId;
+    this.prerequisiteCourseId = prerequisiteCourseId;
+    this.type = type;
+    this.minGrade = minGrade;
 }
 
 public String getId() { return id; }
 public void setId(String id) { this.id = id; }
-
-public Course getCourse() { return course; }
-public void setCourse(Course course) { this.course = course; }
-
-public Course getPrerequisiteCourse() { return prerequisiteCourse; }
-public void setPrerequisiteCourse(Course prerequisiteCourse) { this.prerequisiteCourse = prerequisiteCourse; }
+public String getCourseId() { return courseId; }
+public void setCourseId(String courseId) { this.courseId = courseId; }
+public String getPrerequisiteCourseId() { return prerequisiteCourseId; }
+public void setPrerequisiteCourseId(String prerequisiteCourseId) { this.prerequisiteCourseId = prerequisiteCourseId; }
+public String getType() { return type; }
+public void setType(String type) { this.type = type; }
+public String getMinGrade() { return minGrade; }
+public void setMinGrade(String minGrade) { this.minGrade = minGrade; }
 
 @Override
 public String toString() {
-    return "CoursePrerequisite{course=" + course.getCourseCode() + ", prerequisite=" + prerequisiteCourse.getCourseCode() + "}";
-}
-}
+    return "CoursePrerequisite{id='" + id + "', courseId='" + courseId + "', prerequisiteCourseId='" + prerequisiteCourseId + "'}";
+}}
